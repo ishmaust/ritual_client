@@ -1,1 +1,8 @@
-<app-header></app-header>
+<div class="products">
+  <div class="container">
+    <app-filter class="filter" (filterState)="activeFilter($event)"></app-filter>
+    <div  class="portfolio">
+      <app-product *ngFor="let p of productList | filterPipe: filterState" [product]="p" class="product"></app-product>
+    </div>
+  </div>
+</div>

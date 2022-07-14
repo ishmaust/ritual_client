@@ -1,24 +1,21 @@
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './header/header.component';
 import { AboutComponent } from './about/about.component';
 import { ProductsComponent } from './products/products.component';
 import { DocumentsComponent } from './documents/documents.component';
-import {RouterModule, Routes} from "@angular/router";
-import { NotFoundComponent } from './not-found/not-found.component';
 import { HomeComponent } from './home/home.component';
-
-
-const appRoutes: Routes = [
-  {path: '', component: HomeComponent},
-  {path: 'about', component: AboutComponent},
-  {path: 'products', component: ProductsComponent},
-  {path: 'documents', component: DocumentsComponent},
-  {path: '**', component: NotFoundComponent}
-]
+import { ProductComponent } from './product/product.component';
+import {FormsModule} from "@angular/forms";
+import {NgxSliderModule} from "@angular-slider/ngx-slider";
+import { FilterComponent } from './filter/filter.component';
+import { IsVisibleDirective } from './is-visible.directive';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { FooterComponent } from './footer/footer.component';
+import {HttpClientModule} from "@angular/common/http";
+import {HttpService} from "./core/servicies/http.service";
 
 @NgModule({
   declarations: [
@@ -27,15 +24,20 @@ const appRoutes: Routes = [
     AboutComponent,
     ProductsComponent,
     DocumentsComponent,
-    NotFoundComponent,
-    HomeComponent
+    HomeComponent,
+    ProductComponent,
+    FilterComponent,
+    IsVisibleDirective,
+    FilterPipePipe,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule,
-    RouterModule.forRoot(appRoutes)
+    FormsModule,
+    NgxSliderModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [HttpService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

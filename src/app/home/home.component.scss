@@ -1,0 +1,81 @@
+$gray-light: #EDEDED;
+
+//INTRO
+.intro {
+  background: linear-gradient(#000000, 90%, rgba($gray-light, .5));
+  overflow: hidden;
+}
+
+.intro__inner {
+  display: flex;
+  position: relative;
+  flex-direction: row;
+  align-content: space-between;
+  align-items: center;
+
+  margin: 20px 0;
+}
+
+.intro__pic {
+  position: absolute;
+  display: block;
+  min-width: 100%;
+  height: auto;
+
+  top: 0;
+  left: 25%;
+}
+
+//ABOUT
+.about {
+  margin: 150px 20px;
+  padding-right: 500px;
+
+  z-index: 2;
+
+
+}
+
+.about__pre {
+  font-size: 2.5rem;
+  line-height: 2.8rem;
+  font-weight: 700;
+
+  color: rgba(white, .6);
+
+  text-transform: uppercase;
+}
+
+.about__head {
+  font-size: 3.5rem;
+  line-height: 2.8rem;
+  font-weight: 700;
+
+  color: white;
+
+  text-transform: uppercase;
+}
+
+.about__description {
+  font-size: 1rem;
+  font-weight: 600;
+  color: $gray-light;
+
+  padding-top: 20px;
+}
+
+.about__prop {
+  font-size: 2rem;
+  color: $gray-light;
+
+  padding: 10px 0;
+
+  list-style-type: square;
+
+  transition: transform .2s linear;
+
+  &:hover {
+    transform: scale(1.05);
+    list-style-type: disc;
+  }
+}

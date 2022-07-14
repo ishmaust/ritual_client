@@ -1,0 +1,26 @@
+<div class="container">
+  <div class="filter__inner">
+    <button [ngClass]="[categoryFilter.includes(filterEnum.TYPE1) ? 'btn-active' : 'btn']"
+            (click)="setType(filterEnum.TYPE1)">венки</button>
+
+    <button [ngClass]="[categoryFilter.includes(filterEnum.TYPE2) ? 'btn-active' : 'btn']"
+            (click)="setType(filterEnum.TYPE2)">корзинки</button>
+
+    <button [ngClass]="[categoryFilter.includes(filterEnum.TYPE3) ? 'btn-active' : 'btn']"
+            (click)="setType(filterEnum.TYPE3)">композиции</button>
+  </div>
+  <div class="filter__slider">
+    <div class="price__slider__title">Цена:</div>
+    <ngx-slider [(value)]="minPriceValue"
+                [(highValue)]="maxPriceValue"
+                [options]="priceOptions"
+                (userChange)="priceSliderChange($event)"
+    ></ngx-slider>
+    <div class="price__slider__title">Размер, см:</div>
+    <ngx-slider [(value)]="minSizeValue"
+                [(highValue)]="maxSizeValue"
+                [options]="sizeOptions"
+                (userChange)="sizeSliderChange($event)">
+    </ngx-slider>
+  </div>
+</div>

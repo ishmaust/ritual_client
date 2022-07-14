@@ -1,0 +1,31 @@
+.footer {
+  background-color: #EDEDED;
+  box-shadow: 0 -4px 2px -2px gray;
+  padding: 1rem 0;
+}
+
+.footer__inner {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.contacts {
+  display: flex;
+}
+
+.contacts__numbers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contacts__number {
+  padding: .5rem 0;
+}
+
+.contacts__img {
+  width: 70px;
+  height: 70px;
+  margin-left: 1rem;
+}

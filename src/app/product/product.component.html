@@ -1,0 +1,20 @@
+<div [appIsVisible]="isVisible" class="product">
+  <div class="work">
+    <img class="work__image" src="{{imgSrc}}" alt="">
+    <div class="work__content">
+      <div class="work__cat">{{product.category}}
+        <div class="work__size">{{product.size}} cm</div>
+        </div>
+      <div class="work__title">{{product.productName}}
+        <div class="work__price">{{product.price}} BYN</div>
+      </div>
+      <div class="work__colors">
+        <div [ngClass]="[activeColorIndex === i ? 'work__color-active' : 'work__color']"
+             *ngFor="let color of product.colors; index as i"
+             [style.background-color]="color.color"
+             (click)="choseColor($event, color.productColorImg, i)" >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
